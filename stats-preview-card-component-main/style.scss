@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  --bg-body: hsl(233, 47%, 7%);
+  --bg-card: hsl(244, 38%, 16%);
+
+  --c-heading-accent: hsl(277, 64%, 61%);
+  --c-heading: hsl(0, 0%, 100%);
+  --c-stats: var(--c-heading);
+  --t-mainp: hsla(0, 0%, 100%, 0.75);
+  --t-stats: hsla(0, 0%, 100%, 0.6);
+
+  --fs-body: 15px;
+
+  --ff-lexend: "Lexend Deca", sans-serif;
+  --ff-inter: "Inter", sans-serif;
+
+  --s-heading: 2.4rem;
+  --s-para: 1.4rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-body);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 1rem;
+  font-family: var(--ff-inter);
+}
+
+.card {
+  background-color: var(--bg-card);
+  color: var(--c-heading);
+  max-width: 375px;
+  width: 85%;
+  margin: auto;
+  border: none;
+  border-radius: 0 0 1rem 1rem;
+  position: relative;
+
+  .img {
+    width: 100%;
+    height: 230px;
+    border-radius: 1rem 1rem 0 0;
+    background: linear-gradient(
+        rgba(170, 92, 219, 0.5),
+        rgba(170, 92, 219, 0.5)
+      ),
+      url("./images/image-header-mobile.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.card__content {
+  padding: 3rem;
+}
+
+.card__title {
+  font-size: var(--s-heading);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+
+  span {
+    color: var(--c-heading-accent);
+  }
+}
+
+.card__description {
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--t-mainp);
+}
+
+.card__info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.card__infoitem {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .card__infoitem--first {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .card__infoitem--second {
+    color: var(--t-stats);
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card {
+    display: flex;
+    max-width: 100%;
+    border-radius: 1rem;
+
+    .img {
+      order: 2;
+      height: auto;
+      border-radius: 0 1rem 1rem 0;
+      background: linear-gradient(
+          rgba(170, 92, 219, 0.5),
+          rgba(170, 92, 219, 0.5)
+        ),
+        url("./images/image-header-desktop.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .card__content {
+    display: grid;
+    place-content: center;
+    padding: 8rem;
+  }
+
+  .card__title,
+  .card__description,
+  .card__info {
+    text-align: left;
+  }
+
+  .card__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card__infoitem:last-child {
+    margin: 0;
+  }
+
+  .card__title {
+    width: 100%;
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .card__description {
+    width: 86%;
+    left: 0;
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .card__info {
+    width: 80%;
+  }
+
+  .card__info {
+    .card__infoitem:last-child {
+      margin-bottom: auto;
+    }
+
+    .card__infoitem--first {
+      font-size: 2.4rem;
+    }
+  }
+}
