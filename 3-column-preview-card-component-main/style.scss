@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+
+:root {
+  --bg-body: hsl(0, 0%, 95%);
+  --bg-card-orange: hsl(31, 77%, 52%);
+  --bg-card-cyan: hsl(184, 100%, 22%);
+  --bg-card-dcyan: hsl(179, 100%, 13%);
+
+  --c-heading: hsl(0, 0%, 95%);
+  --c-para: hsl(0, 0%, 90%);
+  --c-button: hsl(0, 0%, 95%);
+
+  --fs-body: 15px;
+
+  --ff-lexend: "Lexend Deca", sans-serif;
+  --ff-bigsoul: "Big Shoulders Display", cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-body);
+  height: 100vh;
+  font-family: var(--ff-inter);
+  font-size: var(--fs-body);
+}
+
+main {
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--c-button);
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-family: inherit;
+  margin: 2rem 0 0 0;
+
+  &:active {
+    background-color: transparent;
+    color: var(--c-button);
+    border: 2px solid var(--c-button);
+  }
+}
+
+.btn--orange {
+  border: 2px solid var(--bg-card-orange);
+  color: var(--bg-card-orange);
+}
+
+.btn--cyan {
+  border: 2px solid var(--bg-card-cyan);
+  color: var(--bg-card-cyan);
+}
+
+.btn--dcyan {
+  border: 2px solid var(--bg-card-dcyan);
+  color: var(--bg-card-dcyan);
+}
+
+.card {
+  color: white;
+  padding: 4rem;
+  border: none;
+  outline: none;
+
+  h2 {
+    font-family: var(--ff-bigsoul);
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: var(--c-heading);
+  }
+
+  p {
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    color: var(--c-para);
+  }
+}
+
+.card--orange {
+  background-color: var(--bg-card-orange);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card--cyan {
+  background-color: var(--bg-card-cyan);
+}
+
+.card--dcyan {
+  background-color: var(--bg-card-dcyan);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.attribution {
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: rgb(32, 32, 32);
+  color: white;
+  bottom: 0;
+  padding: 1rem;
+}
+.attribution a {
+  color: wheat;
+}
+/* Media Query for big screens */
+@media (min-width: 1440px) {
+  body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 70%;
+    margin: auto;
+  }
+
+  .card--orange {
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  .card--dcyan {
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .btn {
+    margin-top: 8rem;
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .card {
+    h2 {
+      font-size: 4rem;
+      margin: 4rem 0;
+    }
+
+    p {
+      max-width: 86%;
+    }
+  }
+}
