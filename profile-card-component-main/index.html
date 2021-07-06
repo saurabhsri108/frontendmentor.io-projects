@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --fs-heading: 1.8rem;
+        --fs-place: 1.2rem;
+        --fs-label: 1rem;
+
+        --color-dark-gray: hsl(0, 0%, 59%);
+        --color-dark-cyan: hsl(185, 75%, 39%);
+        --color-dark-saturated-blue: hsl(229, 23%, 23%);
+        --color-dark-grayish-blue: hsl(227, 10%, 46%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-size: 1.5rem;
+        background-color: var(--color-dark-cyan);
+        max-width: 1440px;
+        width: 90%;
+        margin: auto;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        height: 100vh;
+        gap: 2rem;
+      }
+
+      .top-pattern {
+        position: absolute;
+        top: -24%;
+        left: -40%;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .bottom-pattern {
+        position: absolute;
+        bottom: -24%;
+        right: -40%;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 2rem;
+      }
+
+      .pattern-card {
+        width: 100%;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      }
+
+      .card-detail-head {
+        position: relative;
+        border-bottom: 1px solid var(--color-dark-gray);
+        padding-bottom: 2rem;
+      }
+
+      .victor {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        position: absolute;
+        top: -11.5rem;
+        transform: translate(-40%, 0%);
+        left: 47%;
+      }
+
+      .name {
+        margin-top: 6rem;
+        font-size: var(--fs-heading);
+        color: var(--color-dark-saturated-blue);
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .age {
+        font-weight: 400;
+        color: var(--color-dark-gray);
+      }
+
+      .place {
+        font-size: var(--fs-place);
+        color: var(--color-dark-gray);
+        margin-top: 0.6rem;
+        text-align: center;
+      }
+
+      .card-detail-foot {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        padding: 2rem;
+      }
+
+      .social {
+        text-align: center;
+      }
+
+      .social-stats {
+        font-weight: bold;
+        font-size: var(--fs-heading);
+        color: var(--color-dark-saturated-blue);
+        margin-bottom: 0.4rem;
+      }
+
+      .social-label {
+        color: var(--color-dark-gray);
+        font-size: var(--fs-label);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: white;
+      }
+      .attribution a {
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="bottom-pattern"
+      src="./images/bg-pattern-bottom.svg"
+      alt="Bottom Pattern"
+    />
+    <img
+      class="top-pattern"
+      src="./images/bg-pattern-top.svg"
+      alt="Top Pattern"
+    />
+    <div class="card">
+      <img
+        class="pattern-card"
+        src="./images/bg-pattern-card.svg"
+        alt="Card Pattern"
+      />
+      <div class="card-detail">
+        <div class="card-detail-head">
+          <img
+            class="victor"
+            src="./images/image-victor.jpg"
+            alt="Victor Crest Person Photo"
+          />
+          <h2 class="name">Victor Crest <span class="age">26</span></h2>
+          <p class="place">London</p>
+        </div>
+        <div class="card-detail-foot">
+          <div class="social">
+            <h3 class="social-stats">80k</h3>
+            <p class="social-label">Followers</p>
+          </div>
+          <div class="social">
+            <h3 class="social-stats">803K</h3>
+            <p class="social-label">Likes</p>
+          </div>
+          <div class="social">
+            <h3 class="social-stats">1.4K</h3>
+            <p class="social-label">Photos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Saurabh Srivastava</a>.
+    </footer>
+  </body>
+</html>
